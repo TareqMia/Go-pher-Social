@@ -38,7 +38,7 @@ func (app *application) mount() http.Handler {
 
 	r.Use(middleware.Timeout(time.Second * 60))
 	r.Route("/v1", func(r chi.Router) {
-		r.Get("/heath", app.healthCheckHandler)
+		r.Get("/health", app.healthCheckHandler)
 	})
 
 	return r
